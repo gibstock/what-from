@@ -43,9 +43,9 @@
           <% data.map((item) => { %>
             <div class="item-group">
               <h3><a href="<%= item.link %>" target="_blank"><%= item.title %></a></h3>
-              <div class="date"><%= item.year %></div> 
-              <div class="series"><%= item.series %></div>   
-              <div class="role"><%= item.tvRole || item.role %></div>        
+              <div class="date">Year: <%= item.year %></div> 
+              <div class="series">Type: <%= item.series %></div>   
+              <div class="role">Role: <%= item.tvRole || item.role %></div>        
             </div>
           <%}) %>
         </div>
