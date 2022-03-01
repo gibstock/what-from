@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/script.js" defer></script>
+  <title><%= name %></title>
+</head>
+<body>
+  <header>
+    <nav id="search-nav">
+      <section id="search-box">
+        <div class="container">
+          <h1>What From?</h1>
+          <div class="search-group">
+            <input type="text" placeholder="Artist" id="artist-search" aria-label="artist-search">
+            <input type="submit" name="search" id="searchBtn" value="Search">
+          </div>
+        </div>
+      </section>
+    </nav>
+    <input type="button" value="Search Again" id="search-again">
+  </header>
+  <main>
+    <section id="main-content">
+      <div class="column-left">
+        <div id="column-header">
+          <div class="nameplate">
+            <h1><%= name %></h1>
+          </div>
+          <div class="profile-pic">
+            <a href="<%= mainPage %>" target="_blank" rel="noopener">
+              <img src="<%= profilePic %>" alt="picture of <%= name %>">
+            </a>
+          </div>
+          <div class="description">
+            
+          </div>
+        </div>
+        <div class="container">
+          <% data.map((item) => { %>
+            <div class="item-group">
+              <h3><a href="<%= item.link %>" target="_blank"><%= item.title %></a></h3>
+              <div class="date"><%= item.year %></div> 
+              <div class="series"><%= item.series %></div>   
+              <div class="role"><%= item.tvRole || item.role %></div>        
+            </div>
+          <%}) %>
+        </div>
+      </div>
+      <div class="column-right"></div>
+    </section>
+  </main>
+  <footer>
+
+  </footer>
+  
+</body>
+</html>
