@@ -132,4 +132,27 @@ nav {
     width: 100%;
     border-radius: 25px;
   }
+  #search-box {
+    margin: 0;
+    width: 100%;
+  }
+  .main-wrapper {
+    background-image: url('/image/what-from-splash.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+  }
+  .intro {
+    margin-bottom: 3em;
+    color: #ffffff;
+  }
+  #searchBtn {
+    background-color: transparent;
+    color: #ffffff;
+    font-weight: bold;
+  }
 }
