@@ -27,6 +27,12 @@ app.get('/artist/:id', (req, res) => {
         "mainPage": response.data[0][0].mainPage
       })
     })
+    .catch((error) => {
+      if(error.response) {
+        console.log(error.response.status)
+        res.redirect('/error/')
+      }
+    })
 })
 app.get('/error/', (req, res) => {
   res.render('pages/error-page')

@@ -23,15 +23,15 @@ header {
   padding: 1em;
 }
 #search-again {
-  border: none;
-  background-color: hsl(222, 70%, 60%);
+  border: 1px solid hsl(222, 70%, 60%);
   /* height: 1em; */
   padding: 1em;
   font-size: 1.5em;
-  color: hsl(0, 0%, 100%);
+  color: hsl(222, 70%, 60%);
 }
 #search-again:hover {
   background-color: hsl(222, 70%, 70%);
+  color: hsl(0, 0%, 99%);
   cursor: pointer;
 }
 main {
@@ -92,12 +92,12 @@ main {
 }
 #searchBtn {
   border: none;
-  background-color: hsl(222, 70%, 60%);
+  border: 1px solid hsl(222, 70%, 60%);
   height: 7vh;
   padding: 10px;
   width: 100%;
   border-radius: 25px;
-  color: hsl(0, 0%, 100%);
+  color: hsl(222, 70%, 60%);
   font-size: 1rem;
   text-align: center;
   cursor: pointer;
@@ -105,6 +105,8 @@ main {
 }
 #searchBtn:hover {
   background-color: hsl(222, 70%, 70%);
+  color: hsl(0, 0%, 99%);
+  cursor: pointer;
 }
 
 nav {
@@ -125,5 +127,9 @@ nav {
   #main-content {
     width: 100%;
     grid-template-columns: 1fr;
+  }
+  header {
+    width: 100%;
+    border-radius: 25px;
   }
 }

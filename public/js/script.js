@@ -9,6 +9,7 @@ function searchArtist() {
 
 function openSearchBox() {
   searchNav.style.display = 'block'
+  searchAgainBtn.style.visibility = 'hidden'
 }
 if(window.location.href.includes("artist")){
   searchAgainBtn.addEventListener('click', openSearchBox)
