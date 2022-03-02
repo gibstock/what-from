@@ -42,6 +42,9 @@ header {
   background-repeat: no-repeat;
   background-size: contain;
 }
+header.logo {
+  background: url(/image/from.png) center/contain no-repeat;
+}
 #search-box {
   margin: 0;
   width: 100%;

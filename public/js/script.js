@@ -3,12 +3,16 @@ const artistSearch = document.getElementById('artist-search')
 const searchAgainBtn = document.getElementById('search-again')
 const searchNav = document.getElementById('search-nav')
 const loader = document.getElementById('loader-wrapper')
+const loadingText = document.getElementById('loading-text')
 const searchBox = document.getElementById('search-box')
 
 function searchArtist() {
   location.assign(`/artist/${artistSearch.value}`)
   searchBox.style.display = 'none'
   loader.style.display = 'flex'
+  setTimeout(()=> {
+    loadingText.innerText = `WOW. Either ${artistSearch.value} has a lot of projects or they don't exist. Hang tight.`
+  }, 3000)
 }
 
 function openSearchBox() {

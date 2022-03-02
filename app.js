@@ -18,7 +18,9 @@ app.get('/', (req, res) => {
 
 app.get('/artist/:id', (req, res) => {
   let artist = req.params.id
-  axios.get(`${URL}${artist}`)
+  axios.get(`${URL}${artist}`, {
+    timeout: 8000
+  })
     .then(response => {
       res.render('pages/artist-template', {
         "data": response.data[1],
@@ -28,14 +30,18 @@ app.get('/artist/:id', (req, res) => {
       })
     })
     .catch((error) => {
-      if(error.response) {
-        console.log(error.response.status)
-        res.redirect('/error/')
+      if(error.request) {
+        console.log(error.request._events.response)
+        console.log(error.request._events.error)
+        console.log(error.request.socket)
+        res.redirect(`/error/${artist}`)
       }
     })
 })
-app.get('/error/', (req, res) => {
-  res.render('pages/error-page')
+app.get('/error/:id', (req, res) => {
+  res.render('pages/error-page', {
+    "artist": req.params.id
+  })
 })
 
 app.listen(PORT, ()=> console.log(`Listening at http://localhost:${PORT}`))
