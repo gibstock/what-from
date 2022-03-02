@@ -12,7 +12,8 @@ function searchArtist() {
 }
 
 function openSearchBox() {
-  searchNav.style.display = 'block'
+  searchNav.style.transform = 'translateY(50vh)'
+  searchNav.style.boxShadow = '0px 0px 50px 20px black'
   searchAgainBtn.style.visibility = 'hidden'
 }
 if(window.location.href.includes("artist")){
