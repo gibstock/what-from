@@ -133,6 +133,63 @@ nav {
 .error-message a {
   color: #ffffff;
 }
+.loader {
+  width: 150px;
+  height: 150px;
+  /* border: 10px solid hsl(0, 0%, 0%); */
+  border-top: 10px solid hsl(240, 80%, 70%);
+  filter: drop-shadow(0px 0px 5px red);
+  border-radius: 50%;
+  position: relative;
+  visibility: visible;
+  animation: loading 4s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.sub-loader {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 5px solid hsl(0, 0%, 0%);
+  border-right: 5px solid hsl(240, 80%, 70%);
+  border-left: 5px dotted hsl(240, 80%, 70%);
+  border-radius: 50%;
+  visibility: visible;
+  animation: rev-loading 3s linear infinite reverse;
+}
+.sub-loader::after {
+  content: "";
+  width: 3px;
+  height: 35px;
+  background-color: hsl(240, 80%, 70%);
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sub-loader::before {
+  content: "";
+  width: 35px;
+  height: 3px;
+  background-color: hsl(240, 80%, 70%);
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translateX(50%);
+}
+
+.loading-text {
+  color: hsl(222, 70%, 70%);
+}
+#loader-wrapper {
+  display: none;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
 @media screen and (max-width: 600px) {
   #main-content {
@@ -140,21 +197,30 @@ nav {
     grid-template-columns: 1fr;
   }
   header {
+    position: relative;
     width: 100%;
+    height: 10vh;
     margin: 0;
     border-radius: 6px;
-    background-color: #000000;
+    /* background-color: #000000; */
+    background-image: url('/image/from.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
   #search-box {
     margin: 0;
     width: 100%;
   }
   #search-again {
+    position: sticky;
+    bottom: 0;
+    left: 1em;
     background-color: transparent;
     border: none;
-    color: #fff;
-    box-shadow: 0px 8px 15px 0px hsl(222, 70%, 20%),
-    0px -8px 15px 0px hsl(222, 70%, 30%);
+    color: #000;
+    /* box-shadow: 0px 8px 15px 0px hsl(222, 70%, 20%),
+    0px -8px 15px 0px hsl(222, 70%, 30%); */
   }
   .main-wrapper {
     height: 100vh;
@@ -188,5 +254,31 @@ nav {
   .search-group img {
     max-width: 100%;
     height: auto;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rev-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  40%{
+    transform: rotate(360deg);
+  }
+  55% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(360deg);
+  }
+   100% {
+    transform: rotate(1080deg);
   }
 }
