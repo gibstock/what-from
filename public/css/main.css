@@ -169,7 +169,7 @@ header.logo {
   width: 150px;
   height: 150px;
   border-top: 10px solid hsl(240, 80%, 70%);
-  filter: drop-shadow(0px 0px 5px red);
+  filter: drop-shadow(0px 0px 5px rgb(56, 30, 204));
   border-radius: 50%;
   position: relative;
   visibility: visible;
@@ -177,6 +177,7 @@ header.logo {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1em;
 
 }
 .sub-loader {
@@ -212,7 +213,7 @@ header.logo {
 }
 
 .loading-text {
-  color: hsl(222, 70%, 70%);
+  color: hsl(222, 50%, 90%);
 }
 #loader-wrapper {
   display: none;
