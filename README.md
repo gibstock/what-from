@@ -18,7 +18,7 @@ And **What From?** was born.
 ___
 ## Which API did I use?
 
-What From? uses the [API]('https://github.com/gibstock/whatfromAPI') that I built for searching IMDB.com for just what I need. It's not the sleekest design, I know, but it gets the job done and is easy to use.
+What From? uses the [API](https://github.com/gibstock/whatfromAPI) that I built for searching IMDB.com for just what I need. It's not the sleekest design, I know, but it gets the job done and is easy to use.
 
 ___
 
